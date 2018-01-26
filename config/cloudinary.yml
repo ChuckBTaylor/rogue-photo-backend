@@ -1,0 +1,18 @@
+development:
+  cloud_name: roguephoto
+  api_key: '944954987396741'
+  api_secret: KtLygG607nS3csToR31Zlc5Imys
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: roguephoto
+  api_key: '944954987396741'
+  api_secret: KtLygG607nS3csToR31Zlc5Imys
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: roguephoto
+  api_key: '944954987396741'
+  api_secret: KtLygG607nS3csToR31Zlc5Imys
+  enhance_image_tag: true
+  static_image_support: false
