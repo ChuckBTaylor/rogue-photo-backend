@@ -28,3 +28,10 @@ ashe.new_gallery(name: "Parade", location: 'NYC', date: '1/9/18')
 christina.new_gallery(name: "MLK Memorial", location: 'DC', date: '1/10/18')
 christina.new_gallery(name: "Inauguration", location: 'DC', date: '1/11/18')
 christina.new_gallery(name: "Indy 500", location: 'Indiana', date: '1/12/18')
+
+Tag.create(name: 'LGBTQ')
+Tag.create(name: 'Protest')
+Tag.create(name: 'March')
+Tag.create(name: 'Women\'s Rights')
+Tag.create(name: 'Fuck Trump')
+
