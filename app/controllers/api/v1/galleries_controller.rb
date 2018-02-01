@@ -5,7 +5,18 @@ class Api::V1::GalleriesController < ApplicationController
     render json: galleries
   end
 
+  def cloudinary_gallery_by_id
+    if gallery_params[:id] && Gallery.find(gallery_params[:id])
+      gallery  = Gallery.find(gallery_params[:id])
+      resource = Cloudinary::Api.resources_by_tag(gallery.name)
+      render json: resource
+    else
+      render json: {error: "resource not found"}
+    end
+  end
+
   def cloudinary_galleries
+    resources = {error: "no resources found"}
     if gallery_params[:name]
       resources = Cloudinary::Api.resources_by_tag(gallery_params[:name])
     elsif gallery_params[:tags]
@@ -34,7 +45,8 @@ class Api::V1::GalleriesController < ApplicationController
   private
 
   def gallery_params
-    params.permit(:name, :date, :location, :user_id, :tags => [])
+    params.permit(:name, :date, :location, :user_id, :id, :tags => [])
   end
+end
 
 end
