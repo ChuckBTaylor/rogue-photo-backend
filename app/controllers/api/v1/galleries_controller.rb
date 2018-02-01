@@ -21,8 +21,6 @@ class Api::V1::GalleriesController < ApplicationController
       resources = Cloudinary::Api.resources_by_tag(gallery_params[:name])
     elsif gallery_params[:tags]
       resources = Cloudinary::Api.resources_by_tag(gallery_params[:tags])
-    else
-      resources = Cloudinary::Api.resources
     end
     render json: resources
   end
@@ -47,6 +45,5 @@ class Api::V1::GalleriesController < ApplicationController
   def gallery_params
     params.permit(:name, :date, :location, :user_id, :id, :tags => [])
   end
-end
 
 end
